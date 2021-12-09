@@ -16,7 +16,7 @@
                     src="@/assets/explorer_logo_black.png"
                 />
                 <h1>
-                    <span class="hide">Avalanche Explorer</span>
+                    <span class="hide">ROIChain Explorer</span>
                 </h1>
             </router-link>
         </div>

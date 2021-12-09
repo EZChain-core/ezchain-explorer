@@ -10,7 +10,7 @@
             <p>{{ duration }}</p>
         </div>
         <div class="stake_col">
-            <p class="stakeAmount">{{ stakeAmountText }} AVAX</p>
+            <p class="stakeAmount">{{ stakeAmountText }} ROI</p>
             <p>{{ stakePercText }}%</p>
         </div>
         <div class="comm_col">

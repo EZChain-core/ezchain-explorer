@@ -8,7 +8,7 @@
             <p class="label">
                 Validators
                 <TooltipMeta
-                    content="Total number of nodes validating transactions on Avalanche"
+                    content="Total number of nodes validating transactions on ROIChain"
                     :color="'#2196f3'"
                 />
             </p>
@@ -30,14 +30,14 @@
             <p class="label">
                 Total Staked
                 <TooltipMeta
-                    content="Total value of AVAX locked to secure Avalanche"
+                    content="Total value of ROI locked to secure ROIChain"
                     :color="'#2196f3'"
                 />
             </p>
             <div>
                 <p v-if="subnetsLoaded" class="meta_val">
                     {{ totalStake }}
-                    <span class="unit">AVAX</span>
+                    <span class="unit">ROI</span>
                 </p>
                 <v-progress-circular
                     v-else
@@ -53,7 +53,7 @@
             <p class="label">
                 Staking Ratio
                 <TooltipMeta
-                    content="Percentage of AVAX locked to secure Avalanche out of total AVAX supply"
+                    content="Percentage of ROI locked to secure ROIChain out of total ROI supply"
                     :color="'#2196f3'"
                 />
             </p>

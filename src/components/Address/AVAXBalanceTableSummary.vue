@@ -12,7 +12,7 @@
                     <tr v-for="item in balances" :key="item.name">
                         <td class="text-left">{{ item.name }}</td>
                         <td class="text-right balance">
-                            {{ item.balance }} <span>AVAX</span>
+                            {{ item.balance }} <span>ROI</span>
                         </td>
                     </tr>
                 </tbody>

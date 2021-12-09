@@ -1,7 +1,7 @@
 <template>
     <div id="network_statistics" class="card">
         <div class="header">
-            <h2 class="top_info_heading">Avalanche Network Activity</h2>
+            <h2 class="top_info_heading">ROIChain Network Activity</h2>
         </div>
         <section class="stats one-column">
             <!-- <dl>
@@ -9,7 +9,7 @@
                     <dd class="indent">
                         24h Transactions
                         <TooltipMeta
-                            content="Total number of state queries or modifications of all blockchains on Avalanche in the past 24 hours"
+                            content="Total number of state queries or modifications of all blockchains on ROIChain in the past 24 hours"
                             :color="'#2196f3'"
                         />
                     </dd>
@@ -27,14 +27,14 @@
                     <dd class="indent">
                         24h Volume
                         <TooltipMeta
-                            content="Total value of AVAX transferred on Avalanche in the past 24 hours"
+                            content="Total value of ROI transferred on ROIChain in the past 24 hours"
                             :color="'#2196f3'"
                         />
                     </dd>
                     <dt>
                         <template v-if="subnetsLoaded">
                             {{ avaxVolume }}
-                            <span class="unit">AVAX</span>
+                            <span class="unit">ROI</span>
                         </template>
                         <v-progress-circular
                             v-else
@@ -54,7 +54,7 @@
                     <dd>
                         Validators
                         <TooltipMeta
-                            content="Total number of nodes validating transactions on Avalanche"
+                            content="Total number of nodes validating transactions on ROIChain"
                             :color="'#2196f3'"
                         />
                     </dd>
@@ -78,14 +78,14 @@
                     <dd>
                         Total Staked
                         <TooltipMeta
-                            content="Total value of AVAX locked to secure Avalanche"
+                            content="Total value of ROI locked to secure ROIChain"
                             :color="'#2196f3'"
                         />
                     </dd>
                     <dt>
                         <template v-if="subnetsLoaded">
                             {{ totalStake }}
-                            <span class="unit">AVAX</span></template
+                            <span class="unit">ROI</span></template
                         >
                         <v-progress-circular
                             v-else
@@ -103,7 +103,7 @@
                     <dd>
                         Blockchains
                         <TooltipMeta
-                            content="Total number of blockchains on Avalanche"
+                            content="Total number of blockchains on ROIChain"
                             :color="'#2196f3'"
                         />
                     </dd>
@@ -127,7 +127,7 @@
                     <dd>
                         Subnets
                         <TooltipMeta
-                            content="Total number of subnets on Avalanche"
+                            content="Total number of subnets on ROIChain"
                             :color="'#2196f3'"
                         />
                     </dd>
@@ -151,7 +151,7 @@
                     <dd>
                         Staking Ratio
                         <TooltipMeta
-                            content="Percentage of AVAX locked to secure Avalanche out of total AVAX supply"
+                            content="Percentage of ROI locked to secure ROIChain out of total ROI supply"
                             :color="'#2196f3'"
                         />
                     </dd>
@@ -263,8 +263,8 @@ export default class NetworkActivity extends Mixins(PlatformGettersMixin) {
             const volume_day = asset.volume_day.toString()
             const txCount_day = asset.txCount_day
             const cache = {
-                volume_day, // AVAX volume
-                txCount_day, // AVAX count
+                volume_day, // ROI volume
+                txCount_day, // ROI count
             }
             localStorage.setItem('avaxCache', JSON.stringify(cache))
         }

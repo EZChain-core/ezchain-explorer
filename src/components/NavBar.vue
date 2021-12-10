@@ -18,7 +18,7 @@
                         "
                     />
                     <h1>
-                        <span class="hide">Avalanche Explorer</span>
+                        <span class="hide">ROIChain Explorer</span>
                     </h1>
                 </router-link>
             </div>
@@ -42,7 +42,7 @@
         <div class="bottom">
             <div v-if="pricesLoaded" class="prices">
                 <div class="price_pair">
-                    <span class="label">AVAX</span>
+                    <span class="label">ROI</span>
                     <span class="value">{{ priceUSD }}</span>
                 </div>
                 <!-- <div class="price_pair">
@@ -91,7 +91,7 @@ import { getMarketCapUSD } from '@/store/modules/platform/platform.getters'
     },
 })
 export default class Navbar extends Mixins(PlatformGettersMixin) {
-    currencies = ['USD', 'AVAX']
+    currencies = ['USD', 'ROI']
 
     get themeType() {
         return this.$vuetify.theme.dark ? 'dark' : 'light'

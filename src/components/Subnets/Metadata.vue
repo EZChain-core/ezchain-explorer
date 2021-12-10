@@ -10,7 +10,7 @@
                         <p class="label">
                             Subnets
                             <TooltipMeta
-                                content="Total number of subnets on Avalanche"
+                                content="Total number of subnets on ROIChain"
                             />
                         </p>
                         <p class="meta_val">
@@ -23,7 +23,7 @@
                         <p class="label">
                             Blockchains
                             <TooltipMeta
-                                content="Total number of blockchains on Avalanche"
+                                content="Total number of blockchains on ROIChain"
                             />
                         </p>
                         <p class="meta_val">
@@ -36,7 +36,7 @@
                         <p class="label">
                             Validators
                             <TooltipMeta
-                                content="Total number of nodes validating transactions on Avalanche"
+                                content="Total number of nodes validating transactions on ROIChain"
                             />
                         </p>
                         <p class="meta_val">
@@ -49,12 +49,12 @@
                         <p class="label">
                             Total Stake Amount
                             <TooltipMeta
-                                content="Total value of AVAX locked to secure Avalanche"
+                                content="Total value of ROI locked to secure ROIChain"
                             />
                         </p>
                         <p class="meta_val">
                             {{ totalStake.toLocaleString() }}
-                            <span class="unit">AVAX</span>
+                            <span class="unit">ROI</span>
                         </p>
                     </div>
                 </article>

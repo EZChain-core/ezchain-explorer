@@ -10,7 +10,7 @@
                             require(`@/assets/explorer_logo_${logoColor}.png`)
                         "
                     />
-                    <h1><span class="hide">ROIChain Explorer</span></h1>
+                    <h1><span class="hide">EZChain Explorer</span></h1>
                 </router-link>
             </div>
             <div class="buttons">

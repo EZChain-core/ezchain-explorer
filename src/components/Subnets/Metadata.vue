@@ -10,7 +10,7 @@
                         <p class="label">
                             Subnets
                             <TooltipMeta
-                                content="Total number of subnets on ROIChain"
+                                content="Total number of subnets on EZChain"
                             />
                         </p>
                         <p class="meta_val">
@@ -23,7 +23,7 @@
                         <p class="label">
                             Blockchains
                             <TooltipMeta
-                                content="Total number of blockchains on ROIChain"
+                                content="Total number of blockchains on EZChain"
                             />
                         </p>
                         <p class="meta_val">
@@ -36,7 +36,7 @@
                         <p class="label">
                             Validators
                             <TooltipMeta
-                                content="Total number of nodes validating transactions on ROIChain"
+                                content="Total number of nodes validating transactions on EZChain"
                             />
                         </p>
                         <p class="meta_val">
@@ -49,12 +49,12 @@
                         <p class="label">
                             Total Stake Amount
                             <TooltipMeta
-                                content="Total value of ROI locked to secure ROIChain"
+                                content="Total value of EZC locked to secure EZChain"
                             />
                         </p>
                         <p class="meta_val">
                             {{ totalStake.toLocaleString() }}
-                            <span class="unit">ROI</span>
+                            <span class="unit">EZC</span>
                         </p>
                     </div>
                 </article>

@@ -4,17 +4,17 @@
             <div class="powered_by">
                 <div class="header">
                     <img :src="img" />
-                    <h4>ROIChain Explorer</h4>
+                    <h4>EZChain Explorer</h4>
                 </div>
                 <p class="avalanche_desc">
-                    ROIChain Explorer is an analytics tool that enables people
-                    to search the ROIChain blockchain for transactions,
+                    EZChain Explorer is an analytics tool that enables people
+                    to search the EZChain blockchain for transactions,
                     addresses, and other platform activities.
                 </p>
                 <p class="avalanche_desc tos">
                     By using this application you agree to the
                     <a
-                        href="/ROIChain (BVI) Inc. Explorer Terms of Use.pdf"
+                        href="/EZChain (BVI) Inc. Explorer Terms of Use.pdf"
                         target="_blank"
                         >Terms of Use</a
                     >.

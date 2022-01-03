@@ -22,7 +22,7 @@
                             >
                         </td>
                         <td class="text-right balance">
-                            {{ item.balance }} <span>ROI</span>
+                            {{ item.balance }} <span>EZC</span>
                         </td>
                     </tr>
                 </tbody>

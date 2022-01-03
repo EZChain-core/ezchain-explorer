@@ -8,7 +8,7 @@
             <p class="label">
                 Validators
                 <TooltipMeta
-                    content="Total number of nodes validating transactions on ROIChain"
+                    content="Total number of nodes validating transactions on EZChain"
                     :color="'#2196f3'"
                 />
             </p>
@@ -30,14 +30,14 @@
             <p class="label">
                 Total Staked
                 <TooltipMeta
-                    content="Total value of ROI locked to secure ROIChain"
+                    content="Total value of EZC locked to secure EZChain"
                     :color="'#2196f3'"
                 />
             </p>
             <div>
                 <p v-if="subnetsLoaded" class="meta_val">
                     {{ totalStake }}
-                    <span class="unit">ROI</span>
+                    <span class="unit">EZC</span>
                 </p>
                 <v-progress-circular
                     v-else
@@ -53,7 +53,7 @@
             <p class="label">
                 Staking Ratio
                 <TooltipMeta
-                    content="Percentage of ROI locked to secure ROIChain out of total ROI supply"
+                    content="Percentage of EZC locked to secure EZChain out of total EZC supply"
                     :color="'#2196f3'"
                 />
             </p>

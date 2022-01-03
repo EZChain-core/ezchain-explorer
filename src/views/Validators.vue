@@ -32,12 +32,12 @@
                 </p>
                 <p style="text-align: right">
                     <Tooltip
-                        content="Amount of ROI staked by this validator"
+                        content="Amount of EZC staked by this validator"
                     />Stake
                 </p>
                 <p v-if="$vuetify.breakpoint.smAndUp" style="text-align: right">
                     <Tooltip
-                        content="Percentage of ROI concentrated up to this validator ranking"
+                        content="Percentage of EZC concentrated up to this validator ranking"
                     />Cumulative Stake
                 </p>
             </div>

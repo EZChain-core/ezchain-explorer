@@ -1,8 +1,8 @@
 <template>
     <div class="peer_info">
         <div class="header">
-            <h4 class="meta_title">ROI Stake Distribution</h4>
-            <p class="subtitle">by ROIGo Version</p>
+            <h4 class="meta_title">EZC Stake Distribution</h4>
+            <p class="subtitle">by EZCGo Version</p>
         </div>
         <div class="canv_cont">
             <canvas ref="canv"></canvas>

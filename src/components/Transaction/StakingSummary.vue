@@ -28,7 +28,7 @@
                                 >{{
                                     validatorRewardUTXO.amount | toAVAX
                                 }}
-                                ROI</span
+                                EZC</span
                             >
                         </p>
                     </template>
@@ -40,7 +40,7 @@
                                 >{{
                                     delegatorRewardUTXO.amount | toAVAX
                                 }}
-                                ROI</span
+                                EZC</span
                             >
                         </p>
                         <p class="margin_top">
@@ -49,7 +49,7 @@
                                 >{{
                                     delegatorFeeUTXO.amount | toAVAX
                                 }}
-                                ROI</span
+                                EZC</span
                             >
                             as fee
                         </p>

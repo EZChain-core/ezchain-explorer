@@ -9,7 +9,7 @@
             >
                 <p class="description">
                     Explore network activity and staking metrics using
-                    <a class="bold" :href="statsURL">ROIChain Stats</a>.
+                    <a class="bold" :href="statsURL">EZChain Stats</a>.
                 </p>
             </v-alert>
         </template>
@@ -18,7 +18,7 @@
                 <p class="description">
                     Notice: This Explorer displays activity on the
                     {{ networkName }} Testnet, <span class="bold">not</span> the
-                    ROIChain Mainnet.
+                    EZChain Mainnet.
                 </p>
             </v-alert>
         </template>

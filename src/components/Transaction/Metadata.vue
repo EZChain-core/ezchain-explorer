@@ -48,7 +48,7 @@
             </p>
             <p class="meta_value">
                 {{ tx.txFee | toAVAX }}
-                <span class="unit">ROI</span>
+                <span class="unit">EZC</span>
             </p>
         </article>
         <article class="meta_row">

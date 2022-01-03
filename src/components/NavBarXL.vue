@@ -16,7 +16,7 @@
                     src="@/assets/explorer_logo_black.png"
                 />
                 <h1>
-                    <span class="hide">ROIChain Explorer</span>
+                    <span class="hide">EZChain Explorer</span>
                 </h1>
             </router-link>
         </div>

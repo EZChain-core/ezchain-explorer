@@ -5,9 +5,9 @@ import { IMetaTag } from '@/router/IMetaTag'
 
 Vue.use(VueRouter)
 
-const prefix = 'ROIChain '
+const prefix = 'EZChain '
 const description =
-    'ROIChain Explorer is an analytics tool that enables people to search the ROIChain blockchain for transactions, addresses, and other platform activities.'
+    'EZChain Explorer is an analytics tool that enables people to search the EZChain blockchain for transactions, addresses, and other platform activities.'
 const metaTags: IMetaTag[] = [
     {
         name: 'description',
@@ -26,7 +26,7 @@ const routes = [
         component: Home,
         meta: {
             auth: false,
-            title: 'ROIChain Explorer: View All Activity on ROIChain',
+            title: 'EZChain Explorer: View All Activity on EZChain',
             metaTags: metaTags,
         },
     },

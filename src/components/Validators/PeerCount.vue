@@ -2,7 +2,7 @@
     <div class="peer_info">
         <div class="header">
             <h4 class="meta_title">Peer Count</h4>
-            <p class="subtitle">by ROIGo Version</p>
+            <p class="subtitle">by EZCGo Version</p>
         </div>
         <div class="canv_cont">
             <canvas ref="canv"></canvas>

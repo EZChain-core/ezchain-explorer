@@ -165,8 +165,8 @@ const routes = [
             )
             window.location.href =
                 NETWORK_ID === 1
-                    ? 'https://avascan.info/tokens'
-                    : 'https://testnet.avascan.info/tokens'
+                    ? 'https://coinmarketcap.com/'
+                    : 'https://coinmarketcap.com/'
         },
         meta: {
             auth: false,

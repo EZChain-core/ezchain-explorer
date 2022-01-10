@@ -32,6 +32,7 @@
                     <a :href="statusPageURL">Status</a>
                     <router-link to="/resources">Resources</router-link>
                 </div>
+		<!--
                 <div class="list">
                     <h4>Social</h4>
                     <a href="https://twitter.com/avalancheavax" target="_blank">
@@ -44,6 +45,7 @@
                         <fa :icon="['fab', 'reddit']"></fa>Reddit
                     </a>
                 </div>
+		-->
             </div>
         </div>
     </v-footer>

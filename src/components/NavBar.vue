@@ -116,12 +116,12 @@ export default class Navbar extends Mixins(PlatformGettersMixin) {
 
     get tokensURL() {
         return DEFAULT_NETWORK_ID === 1
-            ? 'https://avascan.info/tokens'
-            : 'https://testnet.avascan.info/tokens'
+            ? 'https://coinmarketcap.com/'
+            : 'https://coinmarketcap.com/'
     }
 
     get statsURL() {
-        return 'https://stats.avax.network/'
+        return 'https://stats.ezchain.com/'
     }
 
     get isMainnet() {

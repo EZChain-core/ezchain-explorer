@@ -40,15 +40,16 @@
             <NetworkMenu />
         </div>
         <div class="bottom">
+            <!--
             <div v-if="pricesLoaded" class="prices">
                 <div class="price_pair">
                     <span class="label">EZC</span>
                     <span class="value">{{ priceUSD }}</span>
                 </div>
-                <!-- <div class="price_pair">
+                <div class="price_pair">
                     <span class="label">Market Cap</span>
                     <span class="value">${{ marketCapUSD }}</span>
-                </div> -->
+                </div>
             </div>
             <v-progress-circular
                 v-else
@@ -58,6 +59,7 @@
                 color="#E84970"
                 indeterminate
             />
+            -->
             <div>
                 <SearchBar
                     class="search_bar"

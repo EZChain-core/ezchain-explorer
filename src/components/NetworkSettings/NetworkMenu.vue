@@ -8,19 +8,17 @@
         <div class="toggle_but" @click="toggleMenu">
             <img
                 v-if="status === 'connected'"
-                :src="require(`@/assets/network_on_primary.png`)"
+                :src="require(`@/assets/network_on_${networkColor}.png`)"
             />
             <img
                 v-else
-                :src="require(`@/assets/network_on_primary.png`)"
+                :src="require(`@/assets/network_off_${networkColor}.png`)"
             />
             <button v-if="status === 'connected'" class="but_primary">
                 {{ activeNetwork.name }}
             </button>
-            <!--
             <button v-else-if="status === 'connecting'">Connecting...</button>
             <button v-else>Disconnected</button>
-            -->
             <fa class="caret" icon="angle-down"></fa>
         </div>
         <!-- MODAL -->

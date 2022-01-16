@@ -44,7 +44,7 @@ export default class TestnetAlert extends Vue {
     }
 
     get statsURL() {
-        return 'https://stats.avax.network/'
+        return 'https://stats.ezchain.com/'
     }
 }
 </script>

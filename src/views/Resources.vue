@@ -2,7 +2,7 @@
     <div class="resources">
         <div class="card">
             <div class="header">
-                <h2>Avalanche Directory</h2>
+                <h2>EZChain Directory</h2>
             </div>
             <hr />
             <div class="resource_container">
@@ -11,10 +11,10 @@
                     <h3>Wallet &amp; Faucet</h3>
                     <p>Used to receive and spend cryptoassets</p>
                     <div class="buts">
-                        <a href="https://wallet.avax.network" target="_blank"
+                        <a href="https://wallet.ezchain.com" target="_blank"
                             >Wallet</a
                         >
-                        <a href="https://faucet.avax.network" target="_blank"
+                        <a href="https://faucet.ezchain.com" target="_blank"
                             >Faucet</a
                         >
                     </div>
@@ -24,10 +24,10 @@
                     <h3>Learning Resources</h3>
                     <p>Learn more about blockchain basics</p>
                     <div class="buts">
-                        <a href="https://docs.avax.network/" target="_blank"
+                        <a href="https://docs.ezchain.com/" target="_blank"
                             >Documentation</a
                         >
-                        <a href="https://github.com/ava-labs" target="_blank"
+                        <a href="https://github.com" target="_blank"
                             >Github</a
                         >
                     </div>

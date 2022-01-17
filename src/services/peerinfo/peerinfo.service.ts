@@ -10,7 +10,7 @@ import { getTotalStake } from './peerinfo'
 const PEER_INFO_URL = DEFAULT_NETWORK_ID === 1 ? peerInfoURL : peerInfoURL_test
 
 function removePrefix(s: string): string {
-    return s.includes('avalanche/') ? s.split('avalanche/')[1] : s
+    return s.includes('ezcgo/') ? s.split('ezcgo/')[1] : s
 }
 
 /**

@@ -9,7 +9,7 @@
                 v-if="!block"
                 :id="blockId"
                 :title="'Block Details Not Found'"
-                :message="'A record for this block was not found in the Avalanche Explorer'"
+                :message="'A record for this block was not found in the EZChain Explorer'"
                 :support-u-r-l="'https://chat.avalabs.org'"
             />
             <template v-else>

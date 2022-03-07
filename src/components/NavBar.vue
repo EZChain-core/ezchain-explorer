@@ -30,9 +30,7 @@
                     <router-link to="/validators">Validators</router-link>
                     <a :href="tokensURL">Tokens</a>
                     <router-link to="/blockchains">Blockchains</router-link>
-                    <a v-if="isMainnet" :href="statsURL">Stats</a>
                     <a :href="cChainURL">C-Chain</a>
-                    <a :href="statusPageURL">Status</a>
                     <router-link to="/resources">Resources</router-link>
                 </div>
             </div>

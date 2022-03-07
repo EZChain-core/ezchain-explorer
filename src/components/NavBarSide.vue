@@ -8,7 +8,6 @@
             <v-list-item to="/assets">Assets</v-list-item>
             <v-list-item to="/tx">Transactions</v-list-item>
             <v-list-item :href="cChainURL">C-Chain</v-list-item>
-            <v-list-item :href="statusPageURL">Status</v-list-item>
             <v-list-item to="/resources">Resources</v-list-item>
         </v-list>
     </div>

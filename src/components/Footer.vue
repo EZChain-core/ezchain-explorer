@@ -29,7 +29,6 @@
                     <router-link to="/assets">Assets</router-link>
                     <router-link to="/blockchains">Blockchains</router-link>
                     <a :href="cChainURL">C-Chain</a>
-                    <a :href="statusPageURL">Status</a>
                     <router-link to="/resources">Resources</router-link>
                 </div>
 		<!--

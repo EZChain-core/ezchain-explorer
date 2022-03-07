@@ -54,7 +54,7 @@ export default Vue.extend({
                     }
                 )
                 // Update tags
-                document.title = to.meta.title || 'Avalanche Explorer'
+                document.title = to.meta.title || 'EZChain Explorer'
                 if (to.meta.metaTags) {
                     to.meta.metaTags
                         .map((tagDef: IMetaTag) => {

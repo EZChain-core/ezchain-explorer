@@ -12,7 +12,7 @@
                 v-if="!tx"
                 :id="txId"
                 :title="'Transaction Details Not Found'"
-                :message="'A record for this transaction ID was not found in the Avalanche Explorer'"
+                :message="'A record for this transaction ID was not found in the EZChain Explorer'"
                 :support-u-r-l="'https://chat.avalabs.org'"
             />
             <template v-else>

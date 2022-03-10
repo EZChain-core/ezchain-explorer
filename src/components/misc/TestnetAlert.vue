@@ -1,3 +1,29 @@
+<template>
+    <div>
+        <template v-if="networkID === 1">
+            <v-alert
+                id="mainnet_announce"
+                class="testnet_alert mainnet_announcement"
+                text
+                rounded="0"
+            >
+                <p class="description">
+                    Explore network activity and staking metrics using Stats Site
+                </p>
+            </v-alert>
+        </template>
+        <template v-else>
+            <v-alert class="testnet_alert" text type="info" rounded="0">
+                <p class="description">
+                    Notice: This Explorer displays activity on the
+                    {{ networkName }} Testnet, <span class="bold">not</span> the
+                    EZChain Mainnet.
+                </p>
+            </v-alert>
+        </template>
+    </div>
+</template>
+
 <script lang="ts">
 import 'reflect-metadata'
 import { Vue, Component } from 'vue-property-decorator'

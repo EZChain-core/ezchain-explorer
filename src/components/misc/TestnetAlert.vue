@@ -7,9 +7,6 @@
                 text
                 rounded="0"
             >
-                <p class="description">
-                    Explore network activity and staking metrics using Stats Site
-                </p>
             </v-alert>
         </template>
         <template v-else>

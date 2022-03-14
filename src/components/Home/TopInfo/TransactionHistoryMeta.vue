@@ -5,7 +5,7 @@
                 <dd>
                     {{ prefix }} Addresses
                     <TooltipMeta
-                        content="Number of unique addresses on Avalanche in the selected time-interval"
+                        content="Number of unique addresses on EZChain in the selected time-interval"
                         :color="'#2196f3'"
                     />
                 </dd>
@@ -17,7 +17,7 @@
                 <dd>
                     {{ prefix }} Assets
                     <TooltipMeta
-                        content="Number of distinct assets transferred on Avalanche in the selected time-interval"
+                        content="Number of distinct assets transferred on EZChain in the selected time-interval"
                         :color="'#2196f3'"
                     />
                 </dd>

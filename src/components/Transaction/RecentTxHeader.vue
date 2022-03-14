@@ -25,9 +25,9 @@
                         >
                     </template>
                     <span
-                        >The P-Chain is the metadata blockchain on Avalanche,
+                        >The P-Chain is the metadata blockchain on EZChain,
                         managing validators and custom subnets. Validators stake
-                        AVAX on the P-Chain to secure the network.</span
+                        EZC on the P-Chain to secure the network.</span
                     >
                 </v-tooltip>
                 <v-tooltip>
@@ -43,7 +43,7 @@
                     </template>
                     <span
                         >The X-Chain is the default asset blockchain on
-                        Avalanche enabling the creation and instant exchange of
+                        EZChain enabling the creation and instant exchange of
                         assets. This blockchain is for transfers that benefit
                         from high-throughput and instant finality. Think X for
                         eXchanging assets.
@@ -62,7 +62,7 @@
                     </template>
                     <span
                         >The C-Chain is the default smart contract blockchain on
-                        Avalanche and enables the creation of any
+                        EZChain and enables the creation of any
                         Ethereum-compatible applications and assets with lower
                         fees and faster transactions.</span
                     >

@@ -4,7 +4,7 @@
             <h2 class="top_info_heading">
                 Top Assets
                 <TooltipHeading
-                    content="The most transferred assets on Avalanche P and X-Chains in the past 24 hours (excludes C-Chain)"
+                    content="The most transferred assets on EZChain P and X-Chains in the past 24 hours (excludes C-Chain)"
                 />
             </h2>
         </div>

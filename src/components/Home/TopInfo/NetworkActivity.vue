@@ -146,7 +146,7 @@
                     </dt>
                 </router-link>
             </dl>
-            <dl>
+            <!--<dl>
                 <router-link class="link" to="/subnets">
                     <dd>
                         Staking Ratio
@@ -170,6 +170,7 @@
                     </dt>
                 </router-link>
             </dl>
+            -->
             <dl>
                 <router-link class="link" to="/subnets">
                     <dd>Annual Staking Reward</dd>

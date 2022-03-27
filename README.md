@@ -1,6 +1,6 @@
-# Avalanche Explorer
+# EZChain Explorer
 
-Frontend Vue.js application for displaying Avalanche network activity and blockchains data from the [Ortelius indexer](https://github.com/ava-labs/ortelius) and [Avalanche-Go client](https://github.com/ava-labs/gecko).
+Frontend Vue.js application for displaying EZChain network activity and blockchains data from the [Ortelius indexer](https://github.com/EZChain/ezchain-ortelius) and [EZChain-Go client](https://github.com/EZChain/ezcgo).
 
 ## Prerequisites
 
@@ -18,14 +18,14 @@ When you go to the app on your browser, you might get a warning saying "Site is 
 
 ## Configuration
 
-See `.env`. By default, the Avalanche Explorer interfaces with the Everest test network.
+See `.env`. By default, the EZChain Explorer interfaces with the Everest test network.
 
 For local development against ortelius and avalanche go, use the docker container setup by the ortelius team. Info can be
-found [here](https://github.com/ava-labs/ortelius#quick-start-with-standalone-mode). You can also connect to a local network you setup yourself, install and run
+found [here](https://github.com/EZChain/ortelius#quick-start-with-standalone-mode). You can also connect to a local network you setup yourself, install and run
 instances by following the instructions found in each lib:
 
--   Data indexing backend [Ortelius](https://github.com/ava-labs/ortelius).
--   Avalanche clients via [Avalanche-Go](https://github.com/ava-labs/gecko) or [Avash](https://github.com/ava-labs/avash).
+-   Data indexing backend [Ortelius](https://github.com/EZChain/ezchain-ortelius).
+-   EZChain clients via [EZChain-Go](https://github.com/EZChain/ezcgo)
 
 Once those are stood up and running, run `yarn serve:local` the application will use the configs in the `.env.hosted` file as the base urls for ortelius and avalanche go
 

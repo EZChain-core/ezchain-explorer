@@ -49,7 +49,7 @@
                 />
             </div>
         </article>
-        <article class="meta">
+        <!--<article class="meta">
             <p class="label">
                 Staking Ratio
                 <TooltipMeta
@@ -70,7 +70,7 @@
                     indeterminate
                 />
             </div>
-        </article>
+        </article>-->
         <article class="meta">
             <p class="label">Annual Staking Reward</p>
             <div>

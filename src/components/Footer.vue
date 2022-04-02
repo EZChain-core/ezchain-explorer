@@ -7,9 +7,9 @@
                     <h4>EZChain Explorer</h4>
                 </div>
                 <p class="avalanche_desc">
-                    EZChain Explorer is an analytics tool that enables people
-                    to search the EZChain blockchain for transactions,
-                    addresses, and other platform activities.
+                    EZChain Explorer is an analytics tool that enables people to
+                    search the EZChain blockchain for transactions, addresses,
+                    and other platform activities.
                 </p>
                 <p class="avalanche_desc tos">
                     By using this application you agree to the
@@ -31,7 +31,7 @@
                     <a :href="cChainURL">C-Chain</a>
                     <router-link to="/resources">Resources</router-link>
                 </div>
-		<!--
+                <!--
                 <div class="list">
                     <h4>Social</h4>
                     <a href="https://twitter.com/avalancheavax" target="_blank">

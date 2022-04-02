@@ -27,9 +27,7 @@
                         <a href="https://docs.ezchain.com/" target="_blank"
                             >Documentation</a
                         >
-                        <a href="https://github.com" target="_blank"
-                            >Github</a
-                        >
+                        <a href="https://github.com" target="_blank">Github</a>
                     </div>
                 </div>
             </div>

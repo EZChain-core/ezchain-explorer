@@ -42,10 +42,10 @@
                         >
                     </template>
                     <span
-                        >The X-Chain is the default asset blockchain on
-                        EZChain enabling the creation and instant exchange of
-                        assets. This blockchain is for transfers that benefit
-                        from high-throughput and instant finality. Think X for
+                        >The X-Chain is the default asset blockchain on EZChain
+                        enabling the creation and instant exchange of assets.
+                        This blockchain is for transfers that benefit from
+                        high-throughput and instant finality. Think X for
                         eXchanging assets.
                     </span>
                 </v-tooltip>

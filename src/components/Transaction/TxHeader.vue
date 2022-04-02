@@ -22,9 +22,9 @@
                     >
                 </template>
                 <span
-                    >The P-Chain is the metadata blockchain on EZChain,
-                    managing validators and custom subnets. Validators stake
-                    EZC on the P-Chain to secure the network.</span
+                    >The P-Chain is the metadata blockchain on EZChain, managing
+                    validators and custom subnets. Validators stake EZC on the
+                    P-Chain to secure the network.</span
                 >
             </v-tooltip>
             <v-tooltip>
@@ -59,9 +59,9 @@
                 </template>
                 <span
                     >The C-Chain is the default smart contract blockchain on
-                    EZChain and enables the creation of any
-                    Ethereum-compatible applications and assets with lower fees
-                    and faster transactions.</span
+                    EZChain and enables the creation of any Ethereum-compatible
+                    applications and assets with lower fees and faster
+                    transactions.</span
                 >
             </v-tooltip>
         </p>

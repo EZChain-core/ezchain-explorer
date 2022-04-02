@@ -25,6 +25,7 @@
 <script lang="ts">
 import { DAY_MS, MINUTE_MS, GENESIS_TIME } from '@/constants'
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
+import moment from 'moment'
 
 const MIN_STAKE_DURATION = DAY_MS * 14
 
@@ -64,6 +65,8 @@ export default class DateForm extends Vue {
         // default end date is 3 weeks
         this.localEnd = this.now.toISOString()
         this.localStart = GENESIS_TIME
+        const startDate = new Date(moment().subtract(7, 'days').calendar())
+        this.localStart = startDate.toISOString()
         this.setStartDate(this.localStart)
         this.setEndDate(this.localEnd)
     }
@@ -112,6 +115,9 @@ export default class DateForm extends Vue {
 }
 </script>
 <style lang="scss">
+.vdatetime-popup {
+    height: 500px !important;
+}
 .dates_form {
     .date input {
         border: none !important;

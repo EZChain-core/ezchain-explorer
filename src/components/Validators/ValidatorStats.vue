@@ -110,7 +110,6 @@ const PC_BASE = new Big(50).div(100)
 const PC_STEP = new Big(-4).div(100)
 const REWARD_POOL = new Big(15).div(100)
 
-
 function convert(n: any): any {
     const sign: string = +n < 0 ? '-' : ''
     let toStr: string = n.toString()
@@ -118,10 +117,18 @@ function convert(n: any): any {
         return n
     }
     toStr = toStr.replace(/^-/, '')
-    const data: Array<any> = toStr.replace(/^([0-9]+)(e.*)/, '$1.$2').split(/e|\./)
+    const data: Array<any> = toStr
+        .replace(/^([0-9]+)(e.*)/, '$1.$2')
+        .split(/e|\./)
     const [lead, decimal, pow]: Array<any> = data
     if (+pow < 0) {
-        return sign + '0.' + '0'.repeat(Math.max(Math.abs(pow) - 1 || 0, 0)) + lead + decimal
+        return (
+            sign +
+            '0.' +
+            '0'.repeat(Math.max(Math.abs(pow) - 1 || 0, 0)) +
+            lead +
+            decimal
+        )
     } else {
         let p: string
         if (+pow >= decimal.length) {
@@ -132,7 +139,6 @@ function convert(n: any): any {
         return sign + lead + p
     }
 }
-
 
 function rewardPercent(ts: number): Big {
     let _b: BN
@@ -152,15 +158,13 @@ function rewardPercent(ts: number): Big {
     r = r.sub(RAT_1)
     let p: Big = r.mul(PC_STEP)
     p = p.add(PC_BASE)
-    if(p.gt(PC_BASE)){
+    if (p.gt(PC_BASE)) {
         p = PC_BASE
     } else if (p.s < 0) {
         p = RAT_1
     }
     return p
 }
-
-
 
 @Component({
     components: {
@@ -192,7 +196,7 @@ export default class ValidatorStats extends Mixins(PlatformGettersMixin) {
 
     get annualStakingRewardPercentage(): string {
         const totalStake = parseInt(this.getTotalStake().toString())
-        const APR = rewardPercent(totalStake * 10**9).mul(100)
+        const APR = rewardPercent(totalStake * 10 ** 9).mul(100)
         return `${APR.toFixed(1)}%`
     }
 }
@@ -252,7 +256,7 @@ h4 {
 
         .label {
             text-transform: capitalize;
-            font-size: 12px;
+            font-size: 18px;
             margin-bottom: 6px;
             padding-left: 3px;
         }

@@ -1,6 +1,5 @@
-
-describe("Basic Functionality", () => {
-  it("should pass test", () => {
-    expect(true).to.equal(true);
-  });
-});
+describe('Basic Functionality', () => {
+    it('should pass test', () => {
+        expect(true).to.equal(true)
+    })
+})

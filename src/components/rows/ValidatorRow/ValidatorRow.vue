@@ -30,7 +30,9 @@
                     "
                 >
                     <b>{{ validator.name }}</b>
-                    <p style="word-break: break-all; font-size: 10px">{{ validator.nodeID }}</p>
+                    <p style="word-break: break-all; font-size: 10px">
+                        {{ validator.nodeID }}
+                    </p>
                     <p>End time: {{ duration }}</p>
                 </div>
             </div>

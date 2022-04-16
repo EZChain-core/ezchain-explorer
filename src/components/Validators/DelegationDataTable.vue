@@ -11,8 +11,8 @@
                 </div>
                 <div class="filter_input_container">
                     <input
-                        type="text"
                         v-model="search"
+                        type="text"
                         class="filter"
                         placeholder="Filter by NodeID"
                     />

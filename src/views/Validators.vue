@@ -153,7 +153,11 @@ export default class Validators extends Mixins(PlatformGettersMixin) {
             .filter(
                 (v: IValidator) =>
                     v.nodeID.includes(this.search.trim()) ||
-                    (v.name && v.name.toLocaleLowerCase().trim().includes(this.search.trim()))
+                    (v.name &&
+                        v.name
+                            .toLocaleLowerCase()
+                            .trim()
+                            .includes(this.search.trim()))
             )
             .slice(0, 10)
     }

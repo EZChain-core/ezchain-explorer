@@ -149,7 +149,6 @@ export default class Validators extends Mixins(PlatformGettersMixin) {
     }
 
     get matchedValidators() {
-        console.log('nhatpham', this.validators)
         return this.validators
             .filter(
                 (v: IValidator) =>

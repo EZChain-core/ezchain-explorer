@@ -12,6 +12,8 @@ import {
     IPendingDelegatorData,
 } from '@/store/modules/platform/IValidator'
 import { AVALANCHE_SUBNET_ID } from '@/store/modules/platform/platform'
+import { getNameValidator } from '@/helper'
+import axios from 'axios'
 
 export default class Subnet {
     id: string
@@ -52,7 +54,6 @@ export default class Subnet {
 
         // console.log(`------------- ${this.id.substring(0,4)} ------------ ${endpoint}`);
         // console.log("result:                        ", response.data.result);
-
         /* ==========================================
             CURRENT VALIDATORS
            ========================================== */
@@ -61,10 +62,36 @@ export default class Subnet {
                 .validators as IValidatorData[]
             let validators: IValidator[] = []
             let delegators: IDelegator[] = []
-
             if (validatorsData.length > 0) {
                 // All Subnets
-                validators = this.setValidators(validatorsData)
+                const newDataNodeId: any = []
+                validatorsData.forEach((el: any) => {
+                    newDataNodeId.push(el.nodeID)
+                })
+                const nodeIDs = newDataNodeId.toLocaleString()
+                // const a = await getNameValidator(nodeIDs)
+                // console.log('a', a)
+                const dataNameNodeId = await axios.get(
+                    `https://api.ezchain.com/v1/service/validators?node_ids=${nodeIDs}`
+                )
+                const validatorsArray = validatorsData
+                const newData = []
+                if (dataNameNodeId.data.data) {
+                    for (let i = 0; i < validatorsArray.length; i++) {
+                        const validator = validatorsArray[i]
+                        validator['name'] = ''
+                        validator['logoUrl'] = ''
+                        dataNameNodeId.data.data.forEach((els: any) => {
+                            if (els.node_id === validator.nodeID) {
+                                validator['name'] = els.name
+                                validator['logoUrl'] = els.logo_url
+                            }
+                        })
+                        newData.push(validator)
+                    }
+                }
+
+                validators = this.setValidators(newData)
                 validators = this.sortByStake(validators, this.id)
 
                 // Primary Network Only
@@ -93,8 +120,31 @@ export default class Subnet {
 
             // All Subnets
             if (pendingValidatorsData.length > 0) {
+                const newDataNodeId: any = []
+                pendingValidatorsData.forEach((el: any) => {
+                    newDataNodeId.push(el.nodeID)
+                })
+                const nodeIDs = newDataNodeId.toLocaleString()
+                const dataNameNodeId = await axios.get(
+                    `https://api.ezchain.com/v1/service/validators?node_ids=${nodeIDs}`
+                )
+                const newDataPendingValidators: any = []
+                if (dataNameNodeId.data.data) {
+                    for (let i = 0; i < pendingValidatorsData.length; i++) {
+                        const validatorPending: any = pendingValidatorsData[i]
+                        validatorPending['name'] = ''
+                        validatorPending['logoUrl'] = ''
+                        dataNameNodeId.data.data.forEach((els: any) => {
+                            if (els.node_id === validatorPending.nodeID) {
+                                validatorPending['name'] = els.name
+                                validatorPending['logoUrl'] = els.logo_url
+                            }
+                        })
+                        newDataPendingValidators.push(validatorPending)
+                    }
+                }
                 pendingValidators = this.setPendingValidators(
-                    pendingValidatorsData
+                    newDataPendingValidators
                 )
             }
 
@@ -125,6 +175,8 @@ export default class Subnet {
         const validators = validatorsData.map((v: IValidatorData) => {
             const validator: IValidator = {
                 nodeID: v.nodeID,
+                name: v.name,
+                logoUrl: v.logoUrl,
                 startTime: new Date(parseInt(v.startTime) * 1000),
                 endTime: new Date(parseInt(v.endTime) * 1000),
             }
@@ -199,6 +251,8 @@ export default class Subnet {
             (pv: IPendingValidatorData) => {
                 const pendingValidator: IPendingValidator = {
                     nodeID: pv.nodeID,
+                    name: pv.name,
+                    logoUrl: pv.logoUrl,
                     startTime: new Date(parseInt(pv.startTime) * 1000),
                     endTime: new Date(parseInt(pv.endTime) * 1000),
                     stakeAmount: parseInt(pv.stakeAmount),

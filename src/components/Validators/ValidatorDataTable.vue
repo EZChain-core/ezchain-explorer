@@ -28,7 +28,7 @@
         <v-data-table
             :items="validators"
             :headers="headers"
-            :search="search"
+            :search="search.trim()"
             multi-sort
             :mobile-breakpoint="0"
         >

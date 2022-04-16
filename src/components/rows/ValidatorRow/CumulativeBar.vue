@@ -43,13 +43,15 @@ $color_dark: $secondary-color;
     left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .agg_bar {
     position: relative;
     width: 10px;
-    height: 100%;
-    background-color: $color_bright;
+    height: 40px;
+    background: #61b0ff;
     border-bottom: 1px solid white;
 }
 

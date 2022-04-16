@@ -11,9 +11,9 @@
                 </div>
                 <div class="filter_input_container">
                     <input
+                        type="text"
                         v-model="search"
                         class="filter"
-                        type="text"
                         placeholder="Filter by NodeID"
                     />
                 </div>
@@ -25,7 +25,7 @@
         <v-data-table
             :items="validators"
             :headers="headers"
-            :search="search"
+            :search="search.trim()"
             multi-sort
             :mobile-breakpoint="0"
         >

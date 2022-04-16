@@ -23,9 +23,9 @@
                 </div>
             </div>
             <div class="headers">
-                <p>Rank</p>
+                <p></p>
                 <p>
-                    Node ID
+                    Name/Node ID
                     <Tooltip
                         content="Node ID of validator participating in the consensus protocol"
                     />
@@ -149,8 +149,13 @@ export default class Validators extends Mixins(PlatformGettersMixin) {
     }
 
     get matchedValidators() {
+        console.log('nhatpham', this.validators)
         return this.validators
-            .filter((v: IValidator) => v.nodeID.includes(this.search))
+            .filter(
+                (v: IValidator) =>
+                    v.nodeID.includes(this.search.trim()) ||
+                    (v.name && v.name.toLocaleLowerCase().trim().includes(this.search.trim()))
+            )
             .slice(0, 10)
     }
 

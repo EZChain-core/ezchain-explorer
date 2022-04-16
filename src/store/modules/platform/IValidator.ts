@@ -1,5 +1,7 @@
 export interface IValidator {
     nodeID: string // validator node id
+    logoUrl?: string | undefined
+    name?: string | undefined
     startTime: Date
     endTime: Date
     // Primary Network only
@@ -39,7 +41,8 @@ export interface IPendingValidator {
     nodeID: string
     startTime: Date
     endTime: Date
-
+    name: string | undefined
+    logoUrl: string | undefined
     stakeAmount: number
     connected?: boolean
     delegationFee?: number
@@ -59,6 +62,8 @@ export interface IPendingDelegator {
 
 export interface IValidatorData {
     nodeID: string
+    name?: string | undefined
+    logoUrl?: string | undefined
     startTime: string
     endTime: string
     // Primary Network Only
@@ -90,9 +95,10 @@ export interface IRewardOwnerData {
 
 export interface IPendingValidatorData {
     nodeID: string
+    logoUrl: string | undefined
+    name: string | undefined
     startTime: string
     endTime: string
-
     stakeAmount: string
     connected?: boolean
     delegationFee?: string

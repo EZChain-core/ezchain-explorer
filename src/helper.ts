@@ -9,6 +9,7 @@ import { PayloadBase, PayloadTypes } from 'avalanche/dist/utils'
 import { NetworkIDToHRP } from 'avalanche/dist/utils/constants'
 import { DEFAULT_NETWORK_ID } from './store/modules/network/network'
 import { IAddress } from './services/addresses/models'
+import axios from 'axios'
 
 function stringToBig(raw: string, denomination = 0): Big {
     return Big(raw).div(Math.pow(10, denomination))
@@ -228,7 +229,12 @@ function getNullAddress(id: string, key = ''): IAddress {
         XC_unlocked: Big(0),
     }
 }
-
+async function getNameValidator(Node_ids: string) {
+    const dataNameNodeId = await axios.get(
+        `https://api.ezchain.com/v1/service/validators?node_ids=${Node_ids}`
+    )
+    return dataNameNodeId
+}
 export {
     nAvaxToAVAX as toAVAX,
     stringToBig,
@@ -248,4 +254,5 @@ export {
     abbreviateBech32,
     abbreviateHex,
     getNullAddress,
+    getNameValidator,
 }

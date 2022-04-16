@@ -1,13 +1,39 @@
 <template>
-    <div class="validator">
+    <div class="validator" style="background: #fafafa">
         <div class="rank">
             <div>
-                <p>{{ validator.rank }}</p>
+                <p>#{{ validator.rank }}</p>
             </div>
         </div>
         <div class="id_col">
-            <p>{{ validator.nodeID }}</p>
-            <p>{{ duration }}</p>
+            <div style="display: flex; align-items: start">
+                <div style="width: 40px; height: 40px; margin-right: 20px">
+                    <img
+                        v-if="validator.logoUrl"
+                        style="width: 40px; height: 40px; border-radius: 40px"
+                        :src="validator.logoUrl"
+                        alt=""
+                    />
+                    <img
+                        v-else
+                        style="width: 40px; height: 40px; border-radius: 40px"
+                        src="@/assets/Logo_default.png"
+                        alt=""
+                    />
+                </div>
+                <div
+                    style="
+                        display: flex;
+                        align-items: start;
+                        justify-content: start;
+                        flex-direction: column;
+                    "
+                >
+                    <b>{{ validator.name }}</b>
+                    <p style="word-break: break-all; font-size: 10px">{{ validator.nodeID }}</p>
+                    <p>End time: {{ duration }}</p>
+                </div>
+            </div>
         </div>
         <div class="stake_col">
             <p class="stakeAmount">{{ stakeAmountText }} EZC</p>
@@ -107,12 +133,12 @@ export default class ValidatorRow extends Mixins(PlatformGettersMixin) {
 
 .rank {
     > div {
-        background-color: $white;
+        //background-color: $white;
         color: $primary-color;
-        border: 2px solid $primary-color;
+        //border: 2px solid $primary-color;
         width: 40px;
         height: 40px;
-        border-radius: 40px;
+        //border-radius: 40px;
         line-height: 40px;
     }
 
@@ -206,6 +232,12 @@ export default class ValidatorRow extends Mixins(PlatformGettersMixin) {
         text-align: right;
     }
 }
+.stakeAmount {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+}
 @include smOnly {
     .validator {
         grid-template-columns: 70px 1fr 1fr 1fr 1fr;
@@ -217,7 +249,6 @@ export default class ValidatorRow extends Mixins(PlatformGettersMixin) {
         grid-row: 2;
     }
 }
-
 @include xsOrSmaller {
     .validator {
         grid-template-columns: 42px 1fr 1fr 0.5fr;

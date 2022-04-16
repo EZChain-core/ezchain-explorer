@@ -157,7 +157,7 @@ export default class Validators extends Mixins(PlatformGettersMixin) {
                         v.name
                             .toLocaleLowerCase()
                             .trim()
-                            .includes(this.search.trim()))
+                            .includes(this.search.toLocaleLowerCase().trim()))
             )
             .slice(0, 10)
     }

@@ -318,11 +318,15 @@ export default class Subnet {
      */
     private sortByStake(validators: IValidator[], id: string): IValidator[] {
         id === AVALANCHE_SUBNET_ID
-            ? validators.sort(
-                  (a, b) =>
-                      (b.totalStakeAmount as number) -
-                      (a.totalStakeAmount as number)
-              )
+            ? validators.sort(function (a, b) {
+                  if ((a.name as string) > (b.name as string)) {
+                      return -1
+                  }
+                  if ((b.name as string) > (a.name as string)) {
+                      return 1
+                  }
+                  return 0
+              })
             : validators.sort(
                   (a, b) => (b.weight as number) - (a.weight as number)
               )

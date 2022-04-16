@@ -46,19 +46,23 @@ export default class Subnet {
                 // const a = await getNameValidator(nodeIDs)
                 // console.log('a', a)
                 const dataNameNodeId = await axios.get(`https://api.ezchain.com/v1/service/validators?node_ids=${nodeIDs}`);
+                const validatorsArray = validatorsData;
+                const newData = [];
                 if (dataNameNodeId.data.data) {
-                    for (let i = 0; i < validatorsData.length; i++) {
-                        const validator = validatorsData[i];
+                    for (let i = 0; i < validatorsArray.length; i++) {
+                        const validator = validatorsArray[i];
+                        validator['name'] = '';
+                        validator['logoUrl'] = '';
                         dataNameNodeId.data.data.forEach((els) => {
                             if (els.node_id === validator.nodeID) {
-                                validator.name = els.name;
-                                validator.logoUrl = els.logo_url;
+                                validator['name'] = els.name;
+                                validator['logoUrl'] = els.logo_url;
                             }
                         });
+                        newData.push(validator);
                     }
                 }
-                console.log(validatorsData);
-                validators = this.setValidators(validatorsData);
+                validators = this.setValidators(newData);
                 validators = this.sortByStake(validators, this.id);
                 // Primary Network Only
                 if (this.id === AVALANCHE_SUBNET_ID) {
@@ -83,7 +87,28 @@ export default class Subnet {
             let pendingDelegators = [];
             // All Subnets
             if (pendingValidatorsData.length > 0) {
-                pendingValidators = this.setPendingValidators(pendingValidatorsData);
+                const newDataNodeId = [];
+                pendingValidatorsData.forEach((el) => {
+                    newDataNodeId.push(el.nodeID);
+                });
+                const nodeIDs = newDataNodeId.toLocaleString();
+                const dataNameNodeId = await axios.get(`https://api.ezchain.com/v1/service/validators?node_ids=${nodeIDs}`);
+                const newDataPendingValidators = [];
+                if (dataNameNodeId.data.data) {
+                    for (let i = 0; i < pendingValidatorsData.length; i++) {
+                        const validatorPending = pendingValidatorsData[i];
+                        validatorPending['name'] = '';
+                        validatorPending['logoUrl'] = '';
+                        dataNameNodeId.data.data.forEach((els) => {
+                            if (els.node_id === validatorPending.nodeID) {
+                                validatorPending['name'] = els.name;
+                                validatorPending['logoUrl'] = els.logo_url;
+                            }
+                        });
+                        newDataPendingValidators.push(validatorPending);
+                    }
+                }
+                pendingValidators = this.setPendingValidators(newDataPendingValidators);
             }
             // Primary Network Only
             if (this.id === AVALANCHE_SUBNET_ID) {
@@ -167,6 +192,8 @@ export default class Subnet {
         const pendingValidators = pendingValidatorsData.map((pv) => {
             const pendingValidator = {
                 nodeID: pv.nodeID,
+                name: pv.name,
+                logoUrl: pv.logoUrl,
                 startTime: new Date(parseInt(pv.startTime) * 1000),
                 endTime: new Date(parseInt(pv.endTime) * 1000),
                 stakeAmount: parseInt(pv.stakeAmount),
@@ -216,8 +243,15 @@ export default class Subnet {
      */
     sortByStake(validators, id) {
         id === AVALANCHE_SUBNET_ID
-            ? validators.sort((a, b) => b.totalStakeAmount -
-                a.totalStakeAmount)
+            ? validators.sort(function (a, b) {
+                if (a > b) {
+                    return -1;
+                }
+                if (b > a) {
+                    return 1;
+                }
+                return 0;
+            })
             : validators.sort((a, b) => b.weight - a.weight);
         validators.forEach((v, i) => (v.rank = i + 1));
         return validators;

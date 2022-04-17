@@ -1,12 +1,12 @@
 <template>
-    <div class="validator" style="background: #fafafa">
+    <div class="validator" style="background: #fafafa;">
         <div class="rank">
             <div>
                 <p>#{{ validator.rank }}</p>
             </div>
         </div>
         <div class="id_col">
-            <div style="display: flex; align-items: start">
+            <div style="display: flex; align-items: center">
                 <div style="width: 40px; height: 40px; margin-right: 20px">
                     <img
                         v-if="validator.logoUrl"
@@ -116,7 +116,7 @@ export default class ValidatorRow extends Mixins(PlatformGettersMixin) {
 .validator {
     display: grid;
     grid-template-columns: 70px 1fr 1fr 1fr;
-
+    min-width: 100%;
     > div {
         text-align: center;
         padding: 10px 15px;
@@ -278,5 +278,10 @@ export default class ValidatorRow extends Mixins(PlatformGettersMixin) {
         grid-column: 1/3;
         grid-row: 2;
     }
+}
+@media (max-width: 600px) {
+  .validator {
+    min-width: 1200px !important;
+  }
 }
 </style>

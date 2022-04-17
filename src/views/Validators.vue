@@ -44,8 +44,21 @@
             <div v-if="validators.length === 0" class="empty_table">
                 <p>No {{ toggle }} Validators</p>
             </div>
-            <div v-show="search.length === 0">
-                <div v-show="validators.length > 0">
+            <div
+                v-show="search.length === 0"
+                style="position: relative; width: 100%"
+            >
+                <div
+                    v-show="validators.length > 0"
+                    class="no_scroll_bar"
+                    style="
+                        display: block;
+                        width: auto;
+                        position: relative;
+                        overflow-x: scroll;
+                        white-space: nowrap;
+                    "
+                >
                     <ValidatorRow
                         v-for="v in paginatedValidators"
                         :key="v.nodeID + v.stakeAmount"
@@ -55,7 +68,17 @@
                     />
                 </div>
             </div>
-            <div v-show="search.length > 0">
+            <div
+                v-show="search.length > 0"
+                class="no_scroll_bar"
+                style="
+                    display: block;
+                    width: auto;
+                    position: relative;
+                    overflow-x: scroll;
+                    white-space: nowrap;
+                "
+            >
                 <ValidatorRow
                     v-for="v in matchedValidators"
                     :key="v.nodeID + v.stakeAmount"
@@ -300,5 +323,12 @@ export default class Validators extends Mixins(PlatformGettersMixin) {
             text-align: left;
         }
     }
+}
+.no_scroll_bar {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 </style>

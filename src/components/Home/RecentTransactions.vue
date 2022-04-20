@@ -3,6 +3,7 @@
         <RecentTxHeader
             heading="Recent Transactions"
             :loading="loading"
+            :transactions="transactions"
             @update="updateTx"
         />
         <!-- TABLE -->

@@ -89,7 +89,7 @@
 </template>
 <script lang="ts">
 import 'reflect-metadata'
-import { Vue, Component, Prop } from 'vue-property-decorator'
+import {Vue, Component, Prop, Watch} from 'vue-property-decorator'
 import { P, X, C, getTxChainType } from '@/known_blockchains'
 import { getNoTransactionOf60s } from '@/helper.ts'
 import {
@@ -104,6 +104,7 @@ import {
 export default class RecentTxHeader extends Vue {
     @Prop() heading!: string
     @Prop() loading!: boolean
+    @Prop() transactions: any
     countTransaction: any = null
     updateTx() {
         this.transactions60s()
@@ -131,6 +132,7 @@ export default class RecentTxHeader extends Vue {
     goToTx() {
         this.$router.push('/tx')
     }
+  @Watch('transactions')
     async transactions60s() {
         const transactionCount = await getNoTransactionOf60s()
         this.countTransaction = transactionCount

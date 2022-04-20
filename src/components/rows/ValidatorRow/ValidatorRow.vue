@@ -1,5 +1,5 @@
 <template>
-    <div class="validator" style="background: #fafafa;">
+    <div class="validator" style="background: #fafafa">
         <div class="rank">
             <div>
                 <p>#{{ validator.rank }}</p>
@@ -280,8 +280,8 @@ export default class ValidatorRow extends Mixins(PlatformGettersMixin) {
     }
 }
 @media (max-width: 600px) {
-  .validator {
-    min-width: 1200px !important;
-  }
+    .validator {
+        min-width: 1200px !important;
+    }
 }
 </style>

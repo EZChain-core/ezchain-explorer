@@ -5,7 +5,7 @@
             :loading="loading"
             @update="updateTx"
         />
-      <!-- TABLE -->
+        <!-- TABLE -->
         <div class="list">
             <TxTableHead />
             <template v-if="transactions">

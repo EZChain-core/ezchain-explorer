@@ -237,12 +237,9 @@ async function getNameValidator(Node_ids: string) {
     return dataNameNodeId
 }
 async function getNoTransactionOf60s() {
-    const now = moment().format('YYYY-MM-DDTHH:mm:ss[Z]')
-    const end = moment().subtract(60, 'seconds')
+    const now = moment().utc().format('YYYY-MM-DDTHH:mm:ss[Z]')
+    const end = moment().utc().subtract(60, 'seconds')
     const endTime = moment(end).format('YYYY-MM-DDTHH:mm:ss[Z]')
-    console.log('now', now)
-    console.log('end', end)
-    console.log('endTime', endTime)
     const data: any = await axios.get(
         `https://index-api.ezchain.com/v2/aggregates?startTime=${endTime}&endTime=${now}`
     )

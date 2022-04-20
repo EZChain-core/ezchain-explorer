@@ -243,7 +243,6 @@ async function getNoTransactionOf60s() {
     const data: any = await axios.get(
         `https://index-api.ezchain.com/v2/aggregates?startTime=${endTime}&endTime=${now}`
     )
-    console.log(data)
     if (data) {
         return data.data['aggregates'].transactionCount
     }

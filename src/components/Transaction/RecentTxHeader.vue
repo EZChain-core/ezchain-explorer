@@ -106,6 +106,7 @@ export default class RecentTxHeader extends Vue {
     @Prop() loading!: boolean
     countTransaction: any = null
     updateTx() {
+        this.transactions60s()
         this.$emit('update')
     }
 
@@ -132,7 +133,6 @@ export default class RecentTxHeader extends Vue {
     }
     async transactions60s() {
         const transactionCount = await getNoTransactionOf60s()
-        console.log('transactionCount', transactionCount)
         this.countTransaction = transactionCount
     }
     created() {

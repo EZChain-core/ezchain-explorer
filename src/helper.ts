@@ -10,6 +10,7 @@ import { NetworkIDToHRP } from 'avalanche/dist/utils/constants'
 import { DEFAULT_NETWORK_ID } from './store/modules/network/network'
 import { IAddress } from './services/addresses/models'
 import axios from 'axios'
+import moment from 'moment'
 
 function stringToBig(raw: string, denomination = 0): Big {
     return Big(raw).div(Math.pow(10, denomination))
@@ -235,6 +236,22 @@ async function getNameValidator(Node_ids: string) {
     )
     return dataNameNodeId
 }
+async function getNoTransactionOf60s() {
+    const now = moment().format('YYYY-MM-DDTHH:mm:ss[Z]')
+    const end = moment().subtract(60, 'seconds')
+    const endTime = moment(end).format('YYYY-MM-DDTHH:mm:ss[Z]')
+    console.log('now', now)
+    console.log('end', end)
+    console.log('endTime', endTime)
+    const data: any = await axios.get(
+        `https://index-api.ezchain.com/v2/aggregates?startTime=${endTime}&endTime=${now}`
+    )
+    console.log(data)
+    if (data) {
+        return data.data['aggregates'].transactionCount
+    }
+    return Math.random()
+}
 export {
     nAvaxToAVAX as toAVAX,
     stringToBig,
@@ -245,6 +262,7 @@ export {
     VMMap,
     VMDocumentationMap,
     VMFullNameMap,
+    getNoTransactionOf60s,
     getRandomQuote,
     trimmedLocaleString,
     getPayloadFromUTXO,

@@ -117,7 +117,7 @@ export default Vue.extend({
 @include lgOrBigger {
     .navbar,
     .router_view {
-        padding: $container_padding_xl;
+        padding: 0px 18vw 30px 18vw;
     }
 
     .side_container {

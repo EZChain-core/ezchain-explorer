@@ -27,7 +27,7 @@ export default class Home extends Vue {}
 
 .recent_tx {
     width: 100%;
-    margin-top: 15px;
+    //margin-top: 15px;
     box-sizing: border-box;
     border: none !important;
 }

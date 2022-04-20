@@ -10,7 +10,9 @@
                     <a class="bold c_chain_link" :href="cChainURL">here</a>.
                 </p>
             </v-alert>
-
+            <p style="font-weight: bold; font-size: 16px; margin-bottom: 16px">
+                No. of transactions in last 60 seconds: {{ countTransaction }}
+            </p>
             <p class="chain">
                 <span class="label">You are viewing transactions for</span>
                 <v-tooltip>
@@ -89,6 +91,7 @@
 import 'reflect-metadata'
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import { P, X, C, getTxChainType } from '@/known_blockchains'
+import { getNoTransactionOf60s } from '@/helper.ts'
 import {
     DEFAULT_NETWORK_ID,
     cChainExplorerURL,
@@ -101,7 +104,7 @@ import {
 export default class RecentTxHeader extends Vue {
     @Prop() heading!: string
     @Prop() loading!: boolean
-
+    countTransaction: any = null
     updateTx() {
         this.$emit('update')
     }
@@ -126,6 +129,14 @@ export default class RecentTxHeader extends Vue {
 
     goToTx() {
         this.$router.push('/tx')
+    }
+    async transactions60s() {
+        const transactionCount = await getNoTransactionOf60s()
+        console.log('transactionCount', transactionCount)
+        this.countTransaction = transactionCount
+    }
+    created() {
+        this.transactions60s()
     }
 }
 </script>

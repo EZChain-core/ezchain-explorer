@@ -1,11 +1,11 @@
 <template>
-    <div class="recent_tx">
+    <div class="recent_tx" style="padding-top: 0px">
         <RecentTxHeader
             heading="Recent Transactions"
             :loading="loading"
             @update="updateTx"
         />
-        <!-- TABLE -->
+      <!-- TABLE -->
         <div class="list">
             <TxTableHead />
             <template v-if="transactions">

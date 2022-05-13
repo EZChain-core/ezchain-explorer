@@ -41,9 +41,14 @@
             <template #item.stakeAmount="{ item }">
                 {{ item.totalStakeAmount | AVAX }} {{ nativeSymbol }}
             </template>
-            <template #item.potentialReward="{ item }"
-                >{{ item.potentialReward | AVAX }} {{ nativeSymbol }}</template
-            >
+            <template #item.potentialReward="{ item }">
+                <span>
+                  <span v-if="item.potentialReward">
+                    {{item.potentialReward | AVAX }} {{ nativeSymbol }}
+                  </span>
+                  <span v-else></span>
+                </span>
+            </template>
             <template #item.startTime="{ item }">
                 <div class="text-right date no-pad-right">
                     {{ item.startTime.getTime() | date }}
@@ -117,7 +122,7 @@
             <template #item.duration="{ item }">
                 {{ (item.endTime - item.startTime) | duration }}
             </template>
-            <template #item.rewardOwner.addresses[0]="{ item }">
+            <template v-if="item" #item.rewardOwner.addresses[0]="{ item }">
                 <router-link :to="`/address/${item.rewardOwner.addresses[0]}`"
                     >{{ item.rewardOwner.addresses[0] }}
                 </router-link>
@@ -126,7 +131,9 @@
                 <div>{{ item.delegationFee }}%</div>
             </template>
             <template #item.uptime="{ item }">
-                <div>{{ item.uptime.toFixed(2) }}%</div>
+                <div v-if="item.uptime">
+                    {{ item.uptime.toFixed(2) ? item.uptime.toFixed(2) : '' }}%
+                </div>
             </template>
             <template #item.delegators="{ item }">
                 <div v-show="item.delegators && item.delegators.length > 0">

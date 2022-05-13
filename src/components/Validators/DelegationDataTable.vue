@@ -192,7 +192,10 @@ export default class ValidatorDataTable extends Vue {
     }
 
     get nativeSymbol() {
+      if(this.$store.state.assets[AVAX_ID]) {
         return this.$store.state.assets[AVAX_ID].symbol
+      }
+      return 'EZC'
     }
 
     created() {
